@@ -40,7 +40,7 @@ def create_caption(row):
             age_caption = ", at age " + str(int(age))
         else:
             age_caption = ""
-        caption = f"photo of {sex_caption} skin, me1anoma {anatom_site_caption} {age_caption}"       
+        caption = f"photo of {sex_caption} skin, me1anoma {anatom_site_caption}{age_caption}"       
         return caption
     else:
         return None
