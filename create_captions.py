@@ -26,8 +26,21 @@ def create_caption(row):
 
     # Check if the diagnosis is malignant
     benign_malignant = row[6]
-    if benign_malignant.lower() == 'malignant':
-        caption = f"photo of a {sex} skin, me1anoma on {anatom_site}, at age {int(age)}"
+    
+    if benign_malignant.lower() == 'malignant':        
+        if sex:
+            sex_caption = sex
+        else: 
+            sex_caption = ""
+        if anatom_site:
+            anatom_site_caption = "on " + str(anatom_site)
+        else:
+            anatom_site_caption = ""
+        if age:
+            age_caption = ", at age " + str(int(age))
+        else:
+            age_caption = ""
+        caption = f"photo of {sex_caption} skin, me1anoma {anatom_site_caption} {age_caption}"       
         return caption
     else:
         return None
