@@ -17,7 +17,6 @@ import os
 from tqdm import tqdm
 
 # Define a function to create captions
-
 def create_caption(row):
     """Create a caption for an image."""
     sex = row[2]
@@ -46,7 +45,7 @@ def create_caption(row):
         return None
 
 # Read the CSV file with pandas
-csv_file = 'train.csv'  # Replace with your CSV file path
+csv_file = 'train.csv'  
 df = pd.read_csv(csv_file)
 
 # Create the 'captions' folder if it doesn't exist

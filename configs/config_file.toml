@@ -1,0 +1,67 @@
+[sdxl_arguments]
+cache_text_encoder_outputs = true
+no_half_vae = true
+min_timestep = 0
+max_timestep = 1000
+shuffle_caption = false
+lowram = true
+
+[model_arguments]
+pretrained_model_name_or_path = "stabilityai/stable-diffusion-xl-base-1.0"
+vae = "vae/sdxl_vae.safetensors"
+
+[dataset_arguments]
+debug_dataset = false
+in_json = "LoRA/meta_lat.json"
+train_data_dir = "malignant_images"
+dataset_repeats = 1
+keep_tokens = 0
+resolution = "1024,1024"
+color_aug = false
+token_warmup_min = 1
+token_warmup_step = 0
+
+[training_arguments]
+output_dir = "melanoma"
+output_name = "melanoma"
+save_precision = "fp16"
+save_every_n_epochs = 2
+train_batch_size = 1
+max_token_length = 225
+mem_eff_attn = false
+sdpa = false
+xformers = true
+max_train_epochs = 50
+max_data_loader_n_workers = 8
+persistent_data_loader_workers = true
+gradient_checkpointing = true
+gradient_accumulation_steps = 1
+mixed_precision = "fp16"
+
+[logging_arguments]
+log_with = "tensorboard"
+logging_dir = "LoRA/logs"
+log_prefix = "melanoma"
+
+[sample_prompt_arguments]
+sample_every_n_epochs = 2
+sample_sampler = "euler_a"
+
+[saving_arguments]
+save_model_as = "safetensors"
+
+[optimizer_arguments]
+optimizer_type = "AdamW8bit"
+learning_rate = 4e-7
+max_grad_norm = 0
+optimizer_args = []
+lr_scheduler = "constant_with_warmup"
+lr_warmup_steps = 100
+
+[additional_network_arguments]
+no_metadata = false
+network_module = "networks.lora"
+network_dim = 128
+network_alpha = 128
+network_args = []
+network_train_unet_only = true
