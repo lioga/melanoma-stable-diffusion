@@ -1,5 +1,5 @@
 # melanoma-stable-diffusion
-This GitHub repository contains code and resources for creating a synthetic melanoma dataset using the power of stable diffusion and LoRa. More detailed explanation can be found in my [blog post](behlulakbudak.com/MedSynthX/).
+This GitHub repository contains code and resources for creating a synthetic melanoma dataset using the power of stable diffusion and LoRa. More detailed explanation can be found in my [blog post](https://behlulakbudak.com/MedSynthX/).
 
 
 # Introduction
