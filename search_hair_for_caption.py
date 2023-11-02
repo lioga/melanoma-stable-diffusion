@@ -37,6 +37,7 @@ def process_image(image_path):
 
     print(f'Total Perimeter: {total_perimeter}')
     name_of_caption = image_path.split(".")
+    # If the total perimeter is greater than 4000, add ', hairy' to the caption
     if total_perimeter > 4000:
         # Add ', hairy' to the caption file associated with this image
         caption_filename = name_of_caption[0] + '.caption'

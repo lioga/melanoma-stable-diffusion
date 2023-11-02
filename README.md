@@ -14,8 +14,8 @@ I wanted to train a LoRa model with only melanoma images. So, I extract the mela
 # Train
 I wanted to use spesifically LoRa for this task because of the following reasons:
 - LoRa is less system intensive than other fine-tuning techniques. It can be trained even with the free-tier of Google Colab on a T4 GPU. So it is very accessible.
-- LoRa is very fast to train because it freezes the original weights of the model and trains on much smaller number of parameters 
-- LoRa is so small in comparison to the other fine-tuning techniques. A traditional checkpoint is around 6 GB, but LoRa is around 100 to 500 MB depending on the network_alpha of the model. 
+- LoRa is very fast to train because it doesn't alter the original weights of the model and trains on much smaller number of parameters 
+- LoRa is so small in comparison to the other fine-tuning techniques. A traditional checkpoint is around 6 GB, but LoRa is around 100 to 500 MB depending on the network_dim of the model. 
 
 So I wanted test the performance of SDXL with LoRa on the medical field. I used fine-tuning scripts from the [kohya_ss](https://github.com/kohya-ss/sd-scripts) repository[^2]. My configs can be found in the `configs` folder. I trained on T4 GPU for 7200 steps. 
 
